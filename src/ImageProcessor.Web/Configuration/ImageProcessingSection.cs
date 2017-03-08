@@ -66,6 +66,16 @@ namespace ImageProcessor.Web.Configuration
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether to use the Moz JPEG Encoder with any JPEG post-processing.
+        /// </summary>
+        [ConfigurationProperty("useMozjpeg", IsRequired = false, DefaultValue = false)]
+        public bool UseMozjpeg
+        {
+            get { return (bool)this["useMozjpeg"]; }
+            set { this["useMozjpeg"] = value; }
+        }
+
+        /// <summary>
         /// Gets the <see cref="T:ImageProcessor.Web.Config.ImageProcessingSection.PresetElementCollection"/>.
         /// </summary>
         /// <value>

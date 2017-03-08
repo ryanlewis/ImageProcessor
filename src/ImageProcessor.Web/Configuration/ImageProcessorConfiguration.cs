@@ -134,6 +134,11 @@ namespace ImageProcessor.Web.Configuration
         public bool FixGamma => GetImageProcessingSection().FixGamma;
 
         /// <summary>
+        /// Gets a value indicating whether to use mozjpeg to post-process JPEGs.
+        /// </summary>
+        public bool UseMozjpeg => GetImageProcessingSection().UseMozjpeg;
+
+        /// <summary>
         /// Gets a value indicating whether whether to intercept all image requests including ones
         /// without querystring parameters.
         /// </summary>

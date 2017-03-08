@@ -183,6 +183,10 @@ namespace ImageProcessor.Web.Plugins.PostProcessor
 
                 case ".jpg":
                 case ".jpeg":
+                    if (Configuration.ImageProcessorConfiguration.Instance.UseMozjpeg)
+                    {
+                        return string.Format(CultureInfo.CurrentCulture, "/c copy \"{0}\" \"{0}.1\" & cjpeg -quality 80  \"{0}.1\" > \"{0}\" & del \"{0}.1\"", sourceFile);
+                    }
 
                     // If it's greater than 10Kb use progressive
                     // http://yuiblog.com/blog/2008/12/05/imageopt-4/
